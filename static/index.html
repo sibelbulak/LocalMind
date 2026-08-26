@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>LocalMind — Yerel RAG Asistanı</title>
+  <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+  <div class="orb one"></div><div class="orb two"></div>
+  <header>
+    <a class="brand" href="#"><span class="logo">L</span><span>LocalMind</span></a>
+    <div class="header-actions"><label class="upload-button" for="fileInput">＋ Belge yükle</label><input id="fileInput" type="file" accept=".txt,.md,.pdf" multiple><div class="status"><i></i><span id="status">Bağlanıyor…</span></div></div>
+  </header>
+  <main>
+    <section class="intro">
+      <div class="eyebrow">MICROSOFT FOUNDRY LOCAL · RAG</div>
+      <h1>Belgelerin konuşmaya<br><em>hazır.</em></h1>
+      <p>Sorularını yerel bilgi tabanına sor. Verilerin cihazında kalır; her cevap kaynaklarıyla birlikte gelir.</p>
+      <div class="metrics">
+        <div><strong id="sourceCount">—</strong><span>kaynak</span></div>
+        <div><strong id="chunkCount">—</strong><span>bilgi parçası</span></div>
+        <div><strong>0</strong><span>bulut çağrısı</span></div>
+      </div>
+    </section>
+    <section class="chat-card">
+      <div class="chat-head"><div><b>Bilgi asistanı</b><small><span id="backend">Yerel motor</span> · <span id="version">v1.1</span></small></div><div class="chat-actions"><label for="fileInput" title="Belge yükle">＋</label><button id="clear" title="Sohbeti temizle">↻</button></div></div>
+      <div id="messages" class="messages">
+        <div class="message assistant"><span class="avatar">L</span><div><p>Merhaba! Yüklenen belgeler hakkında ne öğrenmek istersin?</p><div class="suggestions">
+          <button>Foundry Local nedir?</button><button>RAG nasıl çalışır?</button><button>SQLite neden kullanılıyor?</button>
+        </div></div></div>
+      </div>
+      <form id="askForm"><textarea id="question" rows="1" maxlength="800" placeholder="Belgelerin hakkında bir soru sor…" required></textarea><button class="send" aria-label="Gönder">↑</button></form>
+      <div class="footnote"><span>🔒 Tamamen cihaz üzerinde</span><span>Enter ile gönder · Shift+Enter yeni satır</span></div>
+    </section>
+  </main>
+  <div id="dropzone" class="dropzone"><div><b>Belgeyi buraya bırak</b><span>TXT, Markdown veya PDF · en fazla 10 MB</span></div></div>
+  <div id="toast" class="toast"></div>
+  <footer>Retrieve <b>→</b> Augment <b>→</b> Generate <span>Local AI, grounded answers.</span></footer>
+  <script src="/app.js?v=1.1.0"></script>
+</body></html>
